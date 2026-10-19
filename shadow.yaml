@@ -1,0 +1,128 @@
+general:
+  stop_time: "3 min"
+  log_level: "info"
+  parallelism: 0
+  heartbeat_interval: "1 sec"
+  model_unblocked_syscall_latency: true
+
+experimental:
+  unblocked_vdso_latency: "0 ns"
+  unblocked_syscall_latency: "15 ms"
+
+network:
+  graph:
+    type: 1_gbit_switch
+    options:
+      loss: 0.0
+      latency: "10 ms"
+      jitter: "1 ms"
+
+hosts:
+  a:
+    network_node_id: 0
+    ip_addr: 11.0.0.1
+    host_options:
+      pcap_enabled: true
+      pcap_capture_size: 65535
+    processes:
+    - path: /home/anga/Documents/Project/syncthing/bin/syncthing
+      args: serve
+      start_time: "3 sec"
+      expected_final_state: running
+      environment:
+        HOME: /home/anga/Documents/Project/sync-sim4/sim/a
+        STNORESTART: "1"
+        STNOUPGRADE: "1"
+        GOMAXPROCS: "1"
+        GODEBUG: "asyncpreempt=0"
+
+  b:
+    network_node_id: 0
+    ip_addr: 11.0.0.2
+    host_options:
+      pcap_enabled: true
+      pcap_capture_size: 65535
+    processes:
+    - path: /home/anga/Documents/Project/syncthing/bin/syncthing
+      args: serve
+      start_time: "4 sec"
+      expected_final_state: running
+      environment:
+        HOME: /home/anga/Documents/Project/sync-sim4/sim/b
+        STNORESTART: "1"
+        STNOUPGRADE: "1"
+        GOMAXPROCS: "1"
+        GODEBUG: "asyncpreempt=0"
+
+  c:
+    network_node_id: 0
+    ip_addr: 11.0.0.3
+    host_options:
+      pcap_enabled: true
+      pcap_capture_size: 65535
+    processes:
+    - path: /home/anga/Documents/Project/syncthing/bin/syncthing
+      args: serve
+      start_time: "5 sec"
+      expected_final_state: running
+      environment:
+        HOME: /home/anga/Documents/Project/sync-sim4/sim/c
+        STNORESTART: "1"
+        STNOUPGRADE: "1"
+        GOMAXPROCS: "1"
+        GODEBUG: "asyncpreempt=0"
+
+  d:
+    network_node_id: 0
+    ip_addr: 11.0.0.4
+    host_options:
+      pcap_enabled: true
+      pcap_capture_size: 65535
+    processes:
+    - path: /home/anga/Documents/Project/syncthing/bin/syncthing
+      args: serve
+      start_time: "6 sec"
+      expected_final_state: running
+      environment:
+        HOME: /home/anga/Documents/Project/sync-sim4/sim/d
+        STNORESTART: "1"
+        STNOUPGRADE: "1"
+        GOMAXPROCS: "1"
+        GODEBUG: "asyncpreempt=0"
+
+  e:
+    network_node_id: 0
+    ip_addr: 11.0.0.5
+    host_options:
+      pcap_enabled: true
+      pcap_capture_size: 65535
+    processes:
+    - path: /home/anga/Documents/Project/syncthing/bin/syncthing
+      args: serve
+      start_time: "7 sec"
+      expected_final_state: running
+      environment:
+        HOME: /home/anga/Documents/Project/sync-sim4/sim/e
+        STNORESTART: "1"
+        STNOUPGRADE: "1"
+        GOMAXPROCS: "1"
+        GODEBUG: "asyncpreempt=0"
+
+  f:
+    network_node_id: 0
+    ip_addr: 11.0.0.6
+    host_options:
+      pcap_enabled: true
+      pcap_capture_size: 65535
+    processes:
+    - path: /home/anga/Documents/Project/syncthing/bin/syncthing
+      args: serve
+      start_time: "8 sec"
+      expected_final_state: running
+      environment:
+        HOME: /home/anga/Documents/Project/sync-sim4/sim/f
+        STNORESTART: "1"
+        STNOUPGRADE: "1"
+        GOMAXPROCS: "1"
+        GODEBUG: "asyncpreempt=0"
+
